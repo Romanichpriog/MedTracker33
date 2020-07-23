@@ -44,14 +44,58 @@ override func viewDidLoad() {
                 $0.value = UserDefaults.standard.value(forKey: "weight") as? Int
             }
             
-            <<< PushRow<String>() {
+            <<< IntRow() {
+                $0.title = "Ваш возраст"
+                $0.value = UserDefaults.standard.value(forKey: "age") as! Int
+            }
+            
+            <<< PushRow<String>("pills") {
                 $0.title = "Лекарство"
-                $0.options = ["Аскорбинка", "Витаминка"]//Список лекарств юзера
-                //$0.value = //дефолтное значение
+                $0.options = ["Нурофен", "Аскорбиновая кислота", "Ксарелто", "Детралекс", "Кагоцел", "Конкор", "Кардиомагнил", "Мексидол", "Цитрамон", "Уголь активированный", "Парацетамол", "Эналаприл"]//Список лекарств юзера
                 $0.selectorTitle = "Выберите лекарство!"
                 }.onPresent { from, to in
                     to.dismissOnSelection = false
                     to.dismissOnChange = false
+            }.onChange({ (row) in
+                if let r = self.form.rowBy(tag: "labelPills") as? LabelRow {
+                    if row.value == "Нурофен" {
+                        r.value = "2 таблетки 3 раза в сутки"
+                    }else if row.value == "Аскорбиновая кислота" {
+                        r.value = "1-2 драже 3-5 раз в день"
+                    }else if row.value == "Ксарелто" {
+                        r.value = "1 таблетка 2 раза в сутки"
+                    }else if row.value == "Детралекс" {
+                        r.value = "1 таблетка 1 раз в сутки"
+                    }else if row.value == "Кагоцел" {
+                        r.value = "2 таблетки 3 раза в сутки"
+                    }else if row.value == "Конкор" {
+                        r.value = "1 таблетка 1 раз в сутки"
+                    }else if row.value == "Кардиомагнил" {
+                        r.value = "1 таблетка 1 раз в сутки"
+                    }else if row.value == "Мексидол" {
+                        r.value = "2 таблетка 3 раза в сутки"
+                    }else if row.value == "Цитрамон" {
+                        r.value = "1 таблетка каждые 4 часа"
+                    }else if row.value == "Уголь активированный" {
+                        r.value = "6 таблеток единоразово"
+                    }else if row.value == "Эналаприл" {
+                        r.value = "1 таблетка 3 раза в сутки"
+                    }else if row.value == "Парацетамол" {
+                        r.value = "2 таблетки 3 раза в сутки"
+                    }
+                }
+            })
+            
+            <<< LabelRow("labelPills") { row in
+                row.hidden = .function(["pills"], { form -> Bool in
+                    let row : PushRow = form.rowBy(tag: "pills") as! PushRow<String>
+                    if row.value == nil {
+                        return true
+                    } else {
+                        return false
+                    }
+                    
+                })
             }
 
             +++ Section("Планировщик"){
@@ -66,9 +110,8 @@ override func viewDidLoad() {
             }
             
 
-            <<< LabelRow("label") {
-                
-                $0.value = "1212121"
+            <<< TextAreaRow ("label") {
+                $0.value = "Нурофен - 42 таблетки\rАскорбиновая кислота - 70 таблеток\rКсарелто - 14 таблеток\rДетралекс - 7 таблеток\rКагоцел - 42 таблетки\rКонкор - 7 таблеток\rКардиомагнил - 7 таблеток\rМексидол - 42 таблетки\rЦитрамон - 21 таблетка\rУголь активированный - 24 таблетки\rПарацетамол 42 таблетки\rЭналаприл - 21 таблетка"
                 $0.hidden = .function(["dateTo"], { form -> Bool in
                     let row : DateRow = form.rowBy(tag: "dateTo") as! DateRow
                     if row.value == nil {
@@ -78,6 +121,8 @@ override func viewDidLoad() {
                     }
                     
                 })
+                $0.textAreaMode = .readOnly
+                $0.textAreaHeight = .fixed(cellHeight: 300)
             }
 
 
@@ -117,12 +162,9 @@ override func viewDidLoad() {
                         
                         
                            cell.view!.xLabels = xLabelValues
-                           cell.view!.xLabelsFormatter = {
-                               let fMsPerSample = Double(msPerSample)
-                               let fBaseLine = Double(baseLine)
-                               
-                               return "\(Int($1 * fMsPerSample - fBaseLine * fMsPerSample + ($1 < fBaseLine ? -9.9 : 9.9)) / 10 * 10)г"
-                           }
+                        cell.view!.xLabelsFormatter = { (labelIndex, labelValue) -> String in
+                            String("-500г")
+                        }
                            cell.view!.yLabels = [min, max]
                            cell.view!.yLabelsFormatter = { return "\(Int($1))кг" }
                            
@@ -138,13 +180,20 @@ override func viewDidLoad() {
     }
 }
 
-let data = [58,
+let data = [62,
+            61,
+            61,
             60,
+            60.5,
             59,
-            58,
-            57,
-            57.5,
-            55,
-            60
+            60,
+            60.5,
+            60.5,
+            60.5,
+            61,
+            60.5,
+            60,
+            59.5,
+            59
 ]
 

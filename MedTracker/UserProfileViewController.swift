@@ -218,6 +218,7 @@ class UserProfileViewController: FormViewController {
                 <<< IntRow("age") {
                     $0.title = "Возраст"
                     $0.value = labelFormAge
+                    UserDefaults.standard.set(Double($0.value!), forKey: "age")
                 }
             
                 <<< DecimalRow {

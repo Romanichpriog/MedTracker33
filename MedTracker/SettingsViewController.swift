@@ -37,6 +37,7 @@ func createForm() {
         
     <<< DecimalRow("dreamWeightLabel") {
         $0.title = "Желаемый вес"
+        $0.value = UserDefaults.standard.value(forKey: "dreamWeight") as? Double
         
     }.onChange({ (row) in
         UserDefaults.standard.set(Double(row.value!), forKey: "dreamWeight")

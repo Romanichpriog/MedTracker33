@@ -39,6 +39,9 @@
 		
 		D06C617E24C75B0F002397C0 /* HealthKitSetupAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C617D24C75B0F002397C0 /* HealthKitSetupAssistant.swift */; };
 		D06C618124C78158002397C0 /* ProfileDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C618024C78157002397C0 /* ProfileDataStore.swift */; };
+		D0F8460C24C9DCFA00EE8238 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F8460B24C9DCFA00EE8238 /* Notifications.swift */; };
+		D1E2A1636824F7B40F490354 /* Pods_MedTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9CBE6E6CFA5B1C9DC7823BF /* Pods_MedTracker.framework */; };
+		EE95BB85DBEA1C953F36D7E6 /* Pods_MedTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E184D4F4B88C77DE5C626529 /* Pods_MedTrackerTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,7 +120,9 @@
 		D06C617A24C7181C002397C0 /* MedTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MedTracker.entitlements; sourceTree = "<group>"; };
 		D06C617D24C75B0F002397C0 /* HealthKitSetupAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSetupAssistant.swift; sourceTree = "<group>"; };
 		D06C618024C78157002397C0 /* ProfileDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataStore.swift; sourceTree = "<group>"; };
-		
+		D0F8460B24C9DCFA00EE8238 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		E184D4F4B88C77DE5C626529 /* Pods_MedTrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MedTrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E92EDDD3D950CDB3A3D59AF9 /* Pods-MedTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedTracker.release.xcconfig"; path = "Target Support Files/Pods-MedTracker/Pods-MedTracker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +215,7 @@
 				D06C617A24C7181C002397C0 /* MedTracker.entitlements */,
 				D06C617D24C75B0F002397C0 /* HealthKitSetupAssistant.swift */,
 				D01CB44C24BEE7D100249EA9 /* AppDelegate.swift */,
+				D0F8460B24C9DCFA00EE8238 /* Notifications.swift */,
 				D01CB44E24BEE7D100249EA9 /* SceneDelegate.swift */,
 				D01CB45024BEE7D100249EA9 /* ViewController.swift */,
 				D01CB45224BEE7D100249EA9 /* Main.storyboard */,
@@ -525,6 +531,7 @@
 				D01CB45124BEE7D100249EA9 /* ViewController.swift in Sources */,
 				D06C618124C78158002397C0 /* ProfileDataStore.swift in Sources */,
 				D046903C24C2FE2400C9625C /* HelpersViewController.swift in Sources */,
+				D0F8460C24C9DCFA00EE8238 /* Notifications.swift in Sources */,
 				D046903A24C0D65500C9625C /* UserProfileViewController.swift in Sources */,
 				D01CB44D24BEE7D100249EA9 /* AppDelegate.swift in Sources */,
 				E0BB943224C76FBF00B06E54 /* DBManager.swift in Sources */,
