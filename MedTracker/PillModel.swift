@@ -10,14 +10,14 @@ import Foundation
 import RealmSwift
 @objcMembers
 final class PillModel: Object{
-    dynamic var id = 0
+    dynamic var id = String()
     dynamic var pillName = String()
     dynamic var startDate = Date()
     dynamic var duration = Date()
-    dynamic var doza = Double()
+    dynamic var doza = String()
     dynamic var unit = String()
-    dynamic var shedule = [Date]()
-    dynamic var history = [Date:Bool]()
+    dynamic var shedule = String()
+
     dynamic var pillImage=""
     dynamic var pakageImage=""
     override class func primaryKey() -> String? {
@@ -37,7 +37,6 @@ extension Pill: DBManage{
                   doza: realmObject.doza,
                   unit: realmObject.unit,
                   shedule: realmObject.shedule,
-                  history: realmObject.history,
                   pillImage: realmObject.pillImage,
                   pakageImage: realmObject.pakageImage)
     }
@@ -57,7 +56,6 @@ extension PillModel{
         self.doza = plainObject.doza
         self.unit = plainObject.unit
         self.shedule = plainObject.shedule
-        self.history = plainObject.history
         self.pillImage = plainObject.pillImage
         self.pakageImage = plainObject.pakageImage
         

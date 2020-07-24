@@ -12,8 +12,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-         let notifications = Notifications()
-        
+        // Do any additional setup after loading the view.
     }
 
 

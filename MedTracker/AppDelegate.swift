@@ -7,38 +7,16 @@
 //
 
 import UIKit
-import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    let notifications = Notifications()
-    
+
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        notifications.notificationCenter.delegate = notifications
-        notifications.userRequest()
-        authorizeHealthKit()
+        // Override point for customization after application launch.
         return true
     }
-    
-    private func authorizeHealthKit() {
-        
-        HealthKitSetupAssistant.authorizeHealthKit { (authorized, error) in
-          guard authorized else {
-            let baseMessage = "HealthKit Authorization Failed"
-                
-            if let error = error {
-              print("\(baseMessage). Reason: \(error.localizedDescription)")
-            } else {
-              print(baseMessage)
-            }
-            return
-          }
-          print("HealthKit Successfully Authorized.")
-        }
-    }
-    
-    
 
     // MARK: UISceneSession Lifecycle
 
@@ -52,11 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
-    
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        
-        UIApplication.shared.applicationIconBadgeNumber = 0
     }
 
 

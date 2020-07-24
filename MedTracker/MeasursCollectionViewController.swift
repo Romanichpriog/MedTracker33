@@ -1,23 +1,23 @@
 //
-//  MedicamentsCollectionView.swift
+//  MeasursCollectionViewController.swift
 //  MedTracker
 //
-//  Created by Roman on 18.07.2020.
+//  Created by Roman on 24.07.2020.
 //  Copyright © 2020 MacBook Air. All rights reserved.
 //
 
 import UIKit
 
-class MedicamentsCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+class MeasursCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     weak var vc: UIViewController?
 
-    var cells = [Pill]()
+    var cells = [Measurs]()
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return  cells.count+1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell  = dequeueReusableCell(withReuseIdentifier: PillsCollectionViewCell.reuseId, for: indexPath) as! PillsCollectionViewCell
+        let cell  = dequeueReusableCell(withReuseIdentifier: MeasursCollectionViewCell.reuseId, for: indexPath) as! MeasursCollectionViewCell
         if indexPath.item == 0 {
             cell.hidenView.backgroundColor = .white
             cell.dobavit.isHidden = false
@@ -27,11 +27,10 @@ class MedicamentsCollectionView: UICollectionView, UICollectionViewDelegate, UIC
             
         cell.hidenView.backgroundColor = UIColor.clear
         cell.dobavit.isHidden = true
-        cell.pillName.text = cells[indexPath.item-1].pillName
-        cell.timeTake.text = "Принять в: "+cells[indexPath.item-1].shedule.components(separatedBy: ",")[0]
-        cell.dozaName.text = cells[indexPath.item-1].doza+" "+cells[indexPath.item-1].unit
-            let path = cells[indexPath.item-1].pillImage
-            cell.pillImage.image = UIImage(contentsOfFile: path)
+            let meas = cells[indexPath.item-1]
+            cell.name.text = meas.name
+            cell.last.text = "Последний результат" + meas.last + " " + meas.unit
+            cell.nextData.text = "Следующие измерение " + meas.nextDate
         }
         return cell
     }
@@ -69,7 +68,7 @@ class MedicamentsCollectionView: UICollectionView, UICollectionViewDelegate, UIC
         dataSource = self
         
         
-        register(PillsCollectionViewCell.self, forCellWithReuseIdentifier: PillsCollectionViewCell.reuseId)
+        register(MeasursCollectionViewCell.self, forCellWithReuseIdentifier: MeasursCollectionViewCell.reuseId)
         
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
@@ -77,7 +76,7 @@ class MedicamentsCollectionView: UICollectionView, UICollectionViewDelegate, UIC
         
     }
     
-    func set (cells: [Pill]){
+    func set (cells: [Measurs]){
         self.cells = cells
         self.reloadData()
     }
@@ -95,10 +94,3 @@ class MedicamentsCollectionView: UICollectionView, UICollectionViewDelegate, UIC
     */
 
 }
-
-
-
-
-    
-
-
