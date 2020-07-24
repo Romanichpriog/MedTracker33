@@ -7,6 +7,9 @@ def main_app_pods
   pod 'Charts'
   pod 'ViewRow'
   pod 'SwiftChart'
+  pod 'FSCalendar'
+  pod 'SnapKit', '~> 5.0.0'
+  pod 'RealmSwift'
 end
 
 target 'MedTracker' do
