@@ -12,8 +12,9 @@ class HelthViewController: UIViewController {
     
     //* MARK: -Propirties
     let spasingBetvinViews = 30
+    var pills = [Pill]()
     lazy var heihtOfScrollView = view.frame.height/3
-    
+    let measurs = [Measurs(id: "0", name: "Вес", nextDate: "30.7.2020 ", unit: "кг", last: "88"),Measurs(id: "1", name: "Сахар", nextDate: "25.7.2020 ", unit: "г/моль", last: "4.4"),Measurs(id: "2", name: "Рост", nextDate: "1.1.2021", unit: "см", last: "180"),Measurs(id: "3", name: "Пульс", nextDate: "26.7.2020", unit: "уд/мин", last: "70"),]
     lazy var contentViewSize = CGSize(width: self.view.frame.width, height: self.view.frame.height * 1.6)
     
     lazy var scrView: UIScrollView = {
@@ -53,7 +54,7 @@ class HelthViewController: UIViewController {
     
     lazy var endingLabel: UILabel = {
         let label = UILabel()
-        label.text = "Скоро закончаться"
+        label.text = "Скоро закончатся"
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 35)
         label.textAlignment = .left
         label.sizeToFit()
@@ -71,8 +72,8 @@ class HelthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let medColVeiw = MedicamentsCollectionView(vc: self)
-        let measColView = MedicamentsCollectionView(vc: self)
-        let endingColView = MedicamentsCollectionView(vc: self)
+        let measColView = MeasursCollectionView(vc: self)
+        let endingColView = EndingCollectionView(vc: self)
         containerView.backgroundColor = #colorLiteral(red: 0.971986115, green: 1, blue: 0.8419048786, alpha: 1)
         scrView.backgroundColor = #colorLiteral(red: 0.971986115, green: 1, blue: 0.8419048786, alpha: 1)
         // Do any additional setup after loading the view.
@@ -114,8 +115,24 @@ class HelthViewController: UIViewController {
             make.left.right.equalTo(containerView)
             make.height.equalTo(heihtOfScrollView)
         }
+        getPils()
+        medColVeiw.set(cells: pills)
+        measColView.set(cells: measurs)
+        endingColView.set(cells: cut(pills: pills))
+        
 
-
+        
+    }
+    func cut(pills: [Pill]) -> [Pill]{
+        var endPil = [Pill]()
+        for pil in 0..<pills.count-3{
+            endPil.append(pills[pil])
+        }
+        return endPil
+    }
+    func getPils() {
+         pills = DBManageInl.shared.read(type: Pill.self)
+        print(pills)
         
     }
     

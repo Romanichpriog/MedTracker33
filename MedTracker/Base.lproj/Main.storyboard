@@ -7,84 +7,37 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--User Profile View Controller-->
+        <!--Профиль-->
         <scene sceneID="k3m-dK-p3Q">
             <objects>
-                <viewController id="T7I-DJ-jzI" customClass="UserProfileViewController" customModule="MedTracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="B5N-7S-Kvd" customClass="Use">
+                <viewController id="T7I-DJ-jzI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B5N-7S-Kvd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSf-qV-nGE">
-                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="Профиль" id="EnF-xD-KGs"/>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="uSf-qV-nGE" firstAttribute="trailing" secondItem="fSJ-Jl-bPr" secondAttribute="trailing" id="Bxl-nv-6ob"/>
-                            <constraint firstItem="uSf-qV-nGE" firstAttribute="top" secondItem="fSJ-Jl-bPr" secondAttribute="top" id="fIo-aa-2QV"/>
-                            <constraint firstItem="uSf-qV-nGE" firstAttribute="leading" secondItem="fSJ-Jl-bPr" secondAttribute="leading" id="fe8-Ih-yGe"/>
-                            <constraint firstItem="uSf-qV-nGE" firstAttribute="centerX" secondItem="B5N-7S-Kvd" secondAttribute="centerX" id="v4z-uq-oPR"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="fSJ-Jl-bPr"/>
                     </view>
-                    <navigationItem key="navigationItem" id="nBC-jn-phS"/>
-                    <connections>
-                        <segue destination="tBR-7T-Djw" kind="show" identifier="SettingsViewController" id="UCA-In-Irf"/>
-                    </connections>
+                    <tabBarItem key="tabBarItem" title="Профиль" image="person" catalog="system" id="iGq-lr-Lg1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vs0-5I-ffd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="183" y="1428"/>
+            <point key="canvasLocation" x="-1276" y="739"/>
         </scene>
-        <!--Settings View Controller-->
-        <scene sceneID="UjN-9S-yBQ">
-            <objects>
-                <viewController id="tBR-7T-Djw" customClass="SettingsViewController" customModule="MedTracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ryM-p2-aVh">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="2lw-Do-odo"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="OD1-U1-HSJ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kKP-JF-9NB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1003" y="1428"/>
-        </scene>
-        <!--Helpers View Controller-->
+        <!--Помощники-->
         <scene sceneID="bGu-iF-Nuh">
             <objects>
-                <viewController id="IZz-lM-Ae6" customClass="HelpersViewController" customModule="MedTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IZz-lM-Ae6" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KK5-d9-oc6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0eD-lT-lBd">
-                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title=" Помощники" id="CUL-3X-7q4"/>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="0eD-lT-lBd" firstAttribute="centerX" secondItem="KK5-d9-oc6" secondAttribute="centerX" id="79m-Fh-QhW"/>
-                            <constraint firstItem="0eD-lT-lBd" firstAttribute="top" secondItem="VE4-lj-BOu" secondAttribute="top" id="7ea-Gq-zXg"/>
-                            <constraint firstItem="0eD-lT-lBd" firstAttribute="trailing" secondItem="VE4-lj-BOu" secondAttribute="trailing" id="bRF-l8-uub"/>
-                            <constraint firstItem="0eD-lT-lBd" firstAttribute="leading" secondItem="VE4-lj-BOu" secondAttribute="leading" id="g8Z-Zu-iPt"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="VE4-lj-BOu"/>
                     </view>
-                    <navigationItem key="navigationItem" id="MNV-Sx-d5X"/>
+                    <tabBarItem key="tabBarItem" title="Помощники" image="circle.grid.2x2" catalog="system" id="jju-jt-ovV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="svx-Gf-DZC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-714" y="1428"/>
+            <point key="canvasLocation" x="204" y="246"/>
         </scene>
         <!--Здоровье-->
         <scene sceneID="7wW-VV-HmM">
@@ -97,13 +50,13 @@
                         <viewLayoutGuide key="safeArea" id="EF2-RX-xDY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Здоровье" image="heart" catalog="system" id="y49-pJ-mV8"/>
+                    <navigationItem key="navigationItem" id="2VC-wW-cY0"/>
                     <connections>
                         <segue destination="sLS-qu-if6" kind="show" identifier="goToAdd" id="ds0-EL-EWJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gRs-fQ-z6H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-
             <point key="canvasLocation" x="202.89855072463769" y="-402.45535714285711"/>
         </scene>
         <!--Здоровье-->
@@ -119,6 +72,9 @@
                     <tabBarItem key="tabBarItem" title="Здоровье" image="heart" catalog="system" id="bb6-3m-fp6"/>
                     <navigationItem key="navigationItem" id="VBL-dH-Qed"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="4K9-RM-0qo" kind="show" identifier="goBack" id="8ZR-TQ-zd6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihQ-P2-nzX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -135,53 +91,18 @@
                     </tabBar>
                     <connections>
                         <segue destination="4K9-RM-0qo" kind="relationship" relationship="viewControllers" id="7jy-Xj-z4L"/>
-                        <segue destination="Hqx-Kd-kSk" kind="relationship" relationship="viewControllers" id="IpS-Mr-JNc"/>
-                        <segue destination="WqU-xg-YJY" kind="relationship" relationship="viewControllers" id="05K-6l-noF"/>
+                        <segue destination="IZz-lM-Ae6" kind="relationship" relationship="viewControllers" id="IpS-Mr-JNc"/>
+                        <segue destination="T7I-DJ-jzI" kind="relationship" relationship="viewControllers" id="05K-6l-noF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G5c-Gk-xHK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-714" y="-78"/>
         </scene>
-        <!--Профиль-->
-        <scene sceneID="68j-tf-ewv">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WqU-xg-YJY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Профиль" image="person" catalog="system" id="iGq-lr-Lg1"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xax-bh-rj2">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="T7I-DJ-jzI" kind="relationship" relationship="rootViewController" id="sWa-Rz-lFw"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wCk-V3-DAt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="183" y="720"/>
-        </scene>
-        <!--Помощники-->
-        <scene sceneID="rKr-oe-Icd">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hqx-Kd-kSk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Помощники" image="circle.grid.2x2" catalog="system" id="jju-jt-ovV"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8Cb-64-fs7">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="IZz-lM-Ae6" kind="relationship" relationship="rootViewController" id="zTq-nw-LEv"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aAU-s0-KXw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-714.49275362318849" y="719.86607142857144"/>
-        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="8ZR-TQ-zd6"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="circle.grid.2x2" catalog="system" width="128" height="112"/>
         <image name="heart" catalog="system" width="128" height="109"/>

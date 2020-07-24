@@ -27,6 +27,7 @@ final class DBManageInl {
     
     
     func write<T: DBManage>(objects: [T]){
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         do{
             let realm = try! Realm(configuration: config)
             try! realm.write {

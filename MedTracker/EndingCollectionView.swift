@@ -1,38 +1,32 @@
 //
-//  MedicamentsCollectionView.swift
+//  EndingCollectionView.swift
 //  MedTracker
 //
-//  Created by Roman on 18.07.2020.
+//  Created by Roman on 24.07.2020.
 //  Copyright © 2020 MacBook Air. All rights reserved.
 //
 
 import UIKit
 
-class MedicamentsCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+class EndingCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     weak var vc: UIViewController?
 
     var cells = [Pill]()
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return  cells.count+1
+        return  cells.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  = dequeueReusableCell(withReuseIdentifier: PillsCollectionViewCell.reuseId, for: indexPath) as! PillsCollectionViewCell
-        if indexPath.item == 0 {
-            cell.hidenView.backgroundColor = .white
-            cell.dobavit.isHidden = false
             
             
-        } else {
+        
             
         cell.hidenView.backgroundColor = UIColor.clear
         cell.dobavit.isHidden = true
-        cell.pillName.text = cells[indexPath.item-1].pillName
-        cell.timeTake.text = "Принять в: "+cells[indexPath.item-1].shedule.components(separatedBy: ",")[0]
-        cell.dozaName.text = cells[indexPath.item-1].doza+" "+cells[indexPath.item-1].unit
-            let path = cells[indexPath.item-1].pillImage
-            cell.pillImage.image = UIImage(contentsOfFile: path)
-        }
+        cell.pillName.text = cells[indexPath.item].pillName
+        cell.timeTake.text = "Принять в: "+cells[indexPath.item].shedule.components(separatedBy: ",")[0]
+        cell.dozaName.text = cells[indexPath.item].doza+" "+cells[indexPath.item].unit
         return cell
     }
     
@@ -95,10 +89,3 @@ class MedicamentsCollectionView: UICollectionView, UICollectionViewDelegate, UIC
     */
 
 }
-
-
-
-
-    
-
-

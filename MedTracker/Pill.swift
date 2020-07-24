@@ -10,18 +10,18 @@ import Foundation
 
 
 final class Pill:Decodable {
-    var id:Int
+    var id: String
     var pillName: String
     var startDate: Date
     var duration: Date
-    var doza: Double
+    var doza: String
     var unit: String
-    var shedule: [Date]
-    var history: [Date:Bool]
+    var shedule: String
+
     var pillImage:String
     var pakageImage:String
     
-    init(id:Int,pillName: String,startDate: Date,  duration: Date,  doza:Double, unit: String, shedule: [Date], history : [Date:Bool], pillImage: String, pakageImage :String) {
+    init(id: String,pillName: String,startDate: Date,  duration: Date,  doza:String, unit: String, shedule: String, pillImage: String, pakageImage :String) {
         self.id = id
         self.pillName = pillName
         self.startDate = startDate
@@ -29,7 +29,6 @@ final class Pill:Decodable {
         self.doza = doza
         self.unit = unit
         self.shedule = shedule
-        self.history = history
         self.pillImage = pillImage
         self.pakageImage = pakageImage
     }
