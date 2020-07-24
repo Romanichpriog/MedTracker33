@@ -46,7 +46,7 @@ override func viewDidLoad() {
             
             <<< IntRow() {
                 $0.title = "Ваш возраст"
-                $0.value = UserDefaults.standard.value(forKey: "age") as! Int
+                $0.value = (UserDefaults.standard.value(forKey: "age") as? Int)
             }
             
             <<< PushRow<String>("pills") {
@@ -132,7 +132,7 @@ override func viewDidLoad() {
             }
             <<< DecimalRow() {
                 $0.title = "Текущий вес"
-                $0.value = UserDefaults.standard.value(forKey: "weight") as! Double
+                $0.value = UserDefaults.standard.value(forKey: "weight") as? Double
             }
 
                        <<< ViewRow<Chart>("graph") { (row) in
